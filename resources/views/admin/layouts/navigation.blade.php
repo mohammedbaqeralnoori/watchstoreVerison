@@ -171,7 +171,7 @@
 
         <ul>
             <li data-toggle="tooltip" title="ویرایش پروفایل">
-                <a href="{{ route('profile.edit') ?? '#' }}" class="go-to-page">
+                <a href="#" class="go-to-page">
                     <i class="icon ti-settings"></i>
                 </a>
             </li>
