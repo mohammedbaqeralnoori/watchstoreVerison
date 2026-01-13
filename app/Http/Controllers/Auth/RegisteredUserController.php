@@ -16,42 +16,36 @@ use Illuminate\View\View;
 class RegisteredUserController extends Controller
 {
     /**
-     * عرض صفحة التسجيل.
+     * Display the registration view.
      */
     public function create(): View
     {
-        // استخدم layout لوحة التحكم بدل Breeze guest-layout
-        return view('admin.auth.register');
+        return view('auth.register');
     }
 
     /**
-     * معالجة طلب التسجيل.
+     * Handle an incoming registration request.
      *
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
     {
-        // التحقق من صحة البيانات
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        // إنشاء مستخدم جديد مع كلمة مرور bcrypt
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        // إطلاق حدث التسجيل
         event(new Registered($user));
 
-        // تسجيل الدخول تلقائيًا
         Auth::login($user);
 
-        // إعادة التوجيه إلى الصفحة الرئيسية للوحة التحكم
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::HOME);
     }
 }
