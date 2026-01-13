@@ -19,7 +19,7 @@ class AdminMiddleware
         if ($user->is_admin || $user->hasRole('mohammad')) {
             return $next($request);
         }else{
-            return redirect()->route('forbidden');
+            return redirect()->route('dashboard');
         }
     }
 }
