@@ -65,7 +65,6 @@
 
     <link rel="shortcut icon" href="{{ asset('panel/assets/media/image/favicon.png') }}">
     <meta name="theme-color" content="#5867dd">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
      CSS
     <link rel="stylesheet" href="{{ asset('panel/vendors/bundle.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('panel/vendors/slick/slick.css') }}">
@@ -77,7 +76,7 @@
     <link rel="stylesheet" href="{{ asset('panel/plugins/datepicker/kamadatepicker.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('panel/plugins/colorpicker/css/bootstrap-colorpicker.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('panel/plugins/dropzone/css/dropzone.css') }}" type="text/css">
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
 
