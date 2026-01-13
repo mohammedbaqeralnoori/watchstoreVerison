@@ -1,14 +1,14 @@
 <div class="navigation">
     <div class="navigation-icon-menu">
         <ul>
-             @hasanyrole('mohammad')
+{{--             @hasanyrole('mohammad')--}}
             <li data-toggle="tooltip" title="کاربران">
                 <a href="#users" title=" کاربران">
                     <i class="icon ti-user"></i>
                 </a>
             </li>
-             @endhasanyrole
-            @hasanyrole('مدير فروش')
+{{--             @endhasanyrole--}}
+{{--            @hasanyrole('مدير فروش')--}}
             <li data-toggle="tooltip" title="محصولات">
                 <a href="#products" title=" محصولات">
                     <i class="icon ti-folder"></i>
@@ -20,7 +20,7 @@
                     <i class="icon ti-folder"></i>
                 </a>
             </li>
-             @endhasanyrole
+{{--             @endhasanyrole--}}
         </ul>
         <ul>
             <li data-toggle="tooltip" title="ویرایش پروفایل">
