@@ -23,7 +23,7 @@ class ProductResource extends JsonResource
             'prview'=>$this->prview,
             'count'=>$this->count,
             'sold'=>$this->sold,
-            'image'=>url('admin/products/big/'.$this->image),
+            'image'=>url('images/admin/sliders/big/'.$this->image),
             'guaranty'=>$this->guaranty,
             'discount'=>$this->discount,
             'description'=>$this->description,
